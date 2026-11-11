@@ -1,0 +1,132 @@
+{
+  "torch_version": "2.11.0+cpu",
+  "threads": 2,
+  "accumulation_grad": 7.0,
+  "verification": {
+    "output_engine": 13.386040789624346,
+    "output_torch": 13.386040789624344,
+    "max_diff_engine_vs_torch": 0.0,
+    "max_diff_engine_vs_numerical": 1.6767138788509328e-09,
+    "max_diff_torch_vs_numerical": 1.6767138788509328e-09
+  },
+  "moons": {
+    "n_samples": 100,
+    "epochs": 100,
+    "lr": 0.5,
+    "engine_median_s": 8.889808834000007,
+    "torch_median_s": 0.03190805999997792,
+    "engine_runs_s": [
+      9.125095416999955,
+      8.889808834000007,
+      8.80727067500004,
+      8.454325432000019,
+      10.031420240999978
+    ],
+    "torch_runs_s": [
+      2.1523161640000126,
+      0.03113084000000299,
+      0.03110029999999142,
+      0.0332637200000363,
+      0.03190805999997792
+    ],
+    "speedup_torch_vs_engine": 278.6069987961085,
+    "engine_final_loss": 0.20881737992438867,
+    "torch_final_loss": 0.20881737992438865,
+    "max_loss_diff": 3.3306690738754696e-16,
+    "engine_accuracy": 0.9,
+    "torch_accuracy": 0.9
+  },
+  "execution_modes": [
+    {
+      "model": "tiny 2-8-1, batch 100",
+      "eager_ms": 0.02259000001458844,
+      "trace_first_call_ms": 0.9245800000030613,
+      "trace_ms": 0.020669999997835475,
+      "compile_first_call_ms": 10551.394506999997,
+      "compile_ms": 0.05430999999589403
+    },
+    {
+      "model": "medium 512-1024-1024-10, batch 256",
+      "eager_ms": 5.214500000022326,
+      "trace_first_call_ms": 6.072611000035977,
+      "trace_ms": 5.12050049999857,
+      "compile_first_call_ms": 977.5281099999802,
+      "compile_ms": 5.355750500001477
+    }
+  ],
+  "tensors": [
+    {
+      "name": "x",
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        4096,
+        1
+      ],
+      "contiguous": true
+    },
+    {
+      "name": "x.t() (view)",
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1,
+        4096
+      ],
+      "contiguous": false
+    },
+    {
+      "name": "x.t().contiguous()",
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        4096,
+        1
+      ],
+      "contiguous": true
+    },
+    {
+      "name": "Linear(2,8).weight",
+      "shape": [
+        8,
+        2
+      ],
+      "dtype": "torch.float64",
+      "stride": [
+        2,
+        1
+      ],
+      "contiguous": true
+    },
+    {
+      "name": "Linear(2,8).weight.t()",
+      "shape": [
+        2,
+        8
+      ],
+      "dtype": "torch.float64",
+      "stride": [
+        1,
+        2
+      ],
+      "contiguous": false
+    }
+  ],
+  "contiguity_timing": {
+    "sum_dim1_contiguous_ms": 1.38720000001058,
+    "sum_dim1_noncontiguous_view_ms": 2.5655400000061945,
+    "sum_dim1_after_contiguous_copy_ms": 1.4074454999786212,
+    "contiguous_copy_ms": 44.53672500002881,
+    "shares_memory_view": true,
+    "slowdown_noncontiguous": 1.849437716253336
+  }
+}

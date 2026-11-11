@@ -1,0 +1,21 @@
+torch.fx graph (forward)
+graph():
+    %input_1 : [num_users=1] = placeholder[target=input]
+    %_0 : [num_users=1] = call_module[target=0](args = (%input_1,), kwargs = {})
+    %_1 : [num_users=1] = call_module[target=1](args = (%_0,), kwargs = {})
+    %_2 : [num_users=1] = call_module[target=2](args = (%_1,), kwargs = {})
+    %_3 : [num_users=1] = call_module[target=3](args = (%_2,), kwargs = {})
+    return _3
+
+autograd graph (backward, from loss)
+MeanBackward0
+  SigmoidBackward0
+    AddmmBackward0
+      AccumulateGrad
+      ReluBackward0
+        AddmmBackward0
+          AccumulateGrad
+          TBackward0
+            AccumulateGrad
+      TBackward0
+        AccumulateGrad
