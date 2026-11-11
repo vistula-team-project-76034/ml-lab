@@ -1,0 +1,48 @@
+{
+  "rows": 48842,
+  "columns": 15,
+  "validation_checks_with_violations": [
+    {
+      "check": "missing ('?' or null)",
+      "column": "workclass",
+      "violations": 2799
+    },
+    {
+      "check": "missing ('?' or null)",
+      "column": "occupation",
+      "violations": 2809
+    },
+    {
+      "check": "missing ('?' or null)",
+      "column": "native-country",
+      "violations": 857
+    },
+    {
+      "check": "exact duplicate rows",
+      "column": "all",
+      "violations": 52
+    }
+  ],
+  "train_rows_after_dedup": 34165,
+  "test_rows": 14653,
+  "duplicates_dropped_train": 24,
+  "baseline": {
+    "accuracy": 0.854,
+    "f1": 0.6601
+  },
+  "with_features": {
+    "accuracy": 0.8578,
+    "f1": 0.6696
+  },
+  "conflict_groups": 5,
+  "conflict_rows": 10,
+  "sample_rows_with_issues": 0,
+  "all_rows_issue_counts": {
+    "relationship and sex disagree": 4,
+    "age vs marital-status": 3
+  },
+  "processed_sha256": {
+    "train.csv": "253cc30268f71e65c87aa11abb131c2ce0bea34fca999719277f66f71782b862",
+    "test.csv": "ee20c623b9330724f50ec06c25618be45c1e249ea66752de6719428be3e803b7"
+  }
+}

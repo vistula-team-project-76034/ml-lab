@@ -1,0 +1,81 @@
+config:
+  dataset:
+    name: adult
+    version: 2
+  seed: 42
+  test_size: 0.3
+  clip_percentiles:
+  - 1
+  - 99
+  positive_label: '>50K'
+  label_sample_size: 50
+schema:
+  age: int
+  workclass: category
+  fnlwgt: int
+  education: category
+  education-num: int
+  marital-status: category
+  occupation: category
+  relationship: category
+  race: category
+  sex: category
+  capital-gain: int
+  capital-loss: int
+  hours-per-week: int
+  native-country: category
+  income: category
+ranges:
+  age:
+  - 17
+  - 90
+  hours-per-week:
+  - 1
+  - 99
+  capital-gain:
+  - 0
+  - 99999
+  capital-loss:
+  - 0
+  - 4356
+clip_bounds_from_train:
+  age:
+  - 17.0
+  - 74.0
+  fnlwgt:
+  - 27035.2
+  - 509629.0
+  education-num:
+  - 3.0
+  - 16.0
+  capital-gain:
+  - 0.0
+  - 15024.0
+  capital-loss:
+  - 0.0
+  - 1980.0
+  hours-per-week:
+  - 8.0
+  - 80.0
+  capital_net:
+  - -1980.0
+  - 15024.0
+  hours_per_age:
+  - 0.20833333333333334
+  - 20.0
+raw_data_hash: 02a7bbc4a27c04e1d48193362caf1e3cecb4b700c4c09fff7ffbd11a70db11a2
+processed_sha256:
+  train.csv: 253cc30268f71e65c87aa11abb131c2ce0bea34fca999719277f66f71782b862
+  test.csv: ee20c623b9330724f50ec06c25618be45c1e249ea66752de6719428be3e803b7
+processed_shape:
+  train:
+  - 34165
+  - 108
+  test:
+  - 14653
+  - 108
+versions:
+  python: 3.13.18
+  pandas: 2.3.3
+  numpy: 2.1.3
+  scikit-learn: 1.6.1

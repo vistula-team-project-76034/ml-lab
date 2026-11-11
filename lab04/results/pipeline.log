@@ -1,0 +1,13 @@
+2026-11-11 00:08:23,603 ingestion: rows=48842 columns=15
+2026-11-11 00:08:23,612 raw data hash: 02a7bbc4a27c04e1d48193362caf1e3cecb4b700c4c09fff7ffbd11a70db11a2
+2026-11-11 00:08:24,278 validation: 44 checks, 4 with violations, rows kept=48842
+2026-11-11 00:08:24,343 split: train=34189 test=14653 positive rate train=0.2393 test=0.2393
+2026-11-11 00:08:24,538 duplicates dropped from train: 24 (test untouched, 14653 rows)
+2026-11-11 00:08:26,028 baseline (14 features): {'accuracy': 0.854, 'f1': 0.6601}
+2026-11-11 00:08:27,850 with derived features: {'accuracy': 0.8578, 'f1': 0.6696}
+2026-11-11 00:08:27,855 saved lab04/results/preprocessor.joblib
+2026-11-11 00:08:28,321 duplicate-conflict audit: 5 feature groups with conflicting labels, 10 rows
+2026-11-11 00:08:28,340 50-row manual check: 0 rows with impossible values
+2026-11-11 00:08:31,664 same checks on all rows: {'relationship and sex disagree': 4, 'age vs marital-status': 3}
+2026-11-11 00:08:40,263 processed sha256: {'train.csv': '253cc30268f71e65c87aa11abb131c2ce0bea34fca999719277f66f71782b862', 'test.csv': 'ee20c623b9330724f50ec06c25618be45c1e249ea66752de6719428be3e803b7'}
+2026-11-11 00:08:40,269 Done
