@@ -1,0 +1,21 @@
+Hand-calculated FLOPs per layer (batch 1)
+  MLP        Linear 784->256             401,408
+  MLP        Linear 256->128              65,536
+  MLP        Linear 128->10                2,560
+  CNN        Conv 1->16 (28x28)          225,792
+  CNN        Conv 16->32 (14x14)       1,806,336
+  CNN        Linear 1568->10              31,360
+  Attention  Patch proj 49->64           100,352
+  Attention  QKV proj x2                 786,432
+  Attention  Scores QK^T x2               65,536
+  Attention  Scores*V x2                  65,536
+  Attention  Out proj x2                 262,144
+  Attention  FFN x2                    1,048,576
+  Attention  Head 64->10                   1,280
+
+model         params   hand FLOPs   thop MACs     thop x2  torchinfo MACs  lat b1 ms  lat b128 ms  test acc
+MLP          235,146      469,504     234,752     469,504         235,146      0.065        0.511    87.93%
+CNN           20,490    2,063,488   1,031,744   2,063,488       1,050,570      0.222        9.463    89.60%
+Attention     71,818    2,329,856     591,488   1,182,976          37,514      0.436        3.241    85.89%
+
+torch 2.11.0+cpu, CPU threads 2, train device cpu
